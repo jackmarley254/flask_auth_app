@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app/run.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/auth/register",
+        "dest": "/app/run.py"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/app/run.py"
+      }
+    ],
+    "env": {
+      "DATABASE_URL": "postgresql://postgres.zihueyuzrgcxakqevnif:9N5EmMSbH4sacjSF@aws-0-ap-south-1.pooler.supabase.com:6543/postgres",
+      "SECRET_KEY": "6db3f6c078e5c012c45c318ef8ae8f33c62feb49af34e30506fcab9dec64b1e6",
+      "JWT_SECRET_KEY": "O8XeK65etDsdltjSMR3XpOgzauatbrHObNGbfgjjs2zjllkPUvu8WDhTKrFRvDwbViBbXoajU13eetyOJ7oWuQ=="
+    }
+  }
+  
